@@ -44,7 +44,7 @@ export function Hero() {
               width={1024} height={1408} className="h-full w-full scale-105 object-cover" />
           </div>
           <div className="absolute -bottom-6 left-6 hidden bg-background px-6 py-5 lg:block">
-            <p className="label-micro text-muted-foreground">Desde sempre em</p>
+            <p className="label-micro text-muted-foreground">Um studio em</p>
             <p className="font-serif text-2xl italic">Canela, Serra Gaúcha</p>
           </div>
         </div>
