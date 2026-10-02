@@ -87,9 +87,17 @@
 @utility reveal {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 900ms var(--ease-soft), transform 900ms var(--ease-soft);
-  &.is-visible { opacity: 1; transform: none; }
+
+  transition:
+    opacity 900ms var(--ease-soft),
+    transform 900ms var(--ease-soft);
+
+  &[data-visible="true"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 
 @utility img-zoom {
   transition: transform 1200ms var(--ease-soft);

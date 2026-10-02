@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { images, services, gallery, instagramPreview, site } from "@/content/site";
 import { Reveal, SectionLabel } from "./Reveal";
 
+
 const btnPrimary =
   "label-micro inline-flex items-center justify-center bg-primary px-9 py-4 text-primary-foreground transition-colors duration-500 hover:bg-nude";
 const btnGhost =
@@ -20,26 +21,26 @@ export function Hero() {
     <section id="inicio" className="relative min-h-screen pt-20">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-6 pb-16 md:px-10 lg:grid-cols-12 lg:gap-6 lg:pb-0">
         <div className="flex flex-col justify-center pt-10 lg:col-span-6 lg:pt-0 lg:pr-10">
-          <p className="enter label-micro text-muted-foreground" style={{ animationDelay: "100ms" }}>
+          <p className="label-micro text-muted-foreground">
             Studio Divina — Salão de Beleza & Estética
           </p>
-          <p className="enter mt-8 max-w-sm text-base leading-relaxed text-muted-foreground" style={{ animationDelay: "250ms" }}>
+          <p className="mt-8 max-w-sm text-base leading-relaxed text-muted-foreground">
             Um espaço para desacelerar, se cuidar e sair se sentindo ainda mais você.
           </p>
-          <h1 className="enter mt-8 text-[3.4rem] leading-[0.95] sm:text-7xl xl:text-[7.5rem]" style={{ animationDelay: "400ms" }}>
+          <h1 className="mt-8 text-[3.4rem] leading-[0.95] sm:text-7xl xl:text-[7.5rem]">
             Beleza que <em className="italic text-nude">combina</em> com você.
           </h1>
-          <div className="enter mt-8 flex items-center gap-4" style={{ animationDelay: "550ms" }}>
+          <div className="mt-8 flex items-center gap-4">
             <span className="h-px w-12 bg-foreground/40" />
             <span className="label-micro">{site.city}</span>
           </div>
-          <div className="enter mt-12 flex flex-col gap-3 sm:flex-row" style={{ animationDelay: "700ms" }}>
+          <div className="mt-12 flex flex-col gap-3 sm:flex-row">
             <a href={site.whatsapp} target="_blank" rel="noreferrer" className={btnPrimary}>Agendar horário</a>
             <a href="#studio" className={btnGhost}>Conhecer o Studio</a>
           </div>
         </div>
         <div className="relative lg:col-span-6">
-          <div className="enter relative h-[78vh] overflow-hidden lg:h-[calc(100vh-5rem)]" style={{ animationDelay: "200ms" }}>
+          <div className="relative h-[78vh] overflow-hidden lg:h-[calc(100vh-5rem)]">
             <img ref={imgRef} src={images.hero} alt="Cabelo longo ondulado finalizado no Studio Divina"
               width={1024} height={1408} className="h-full w-full scale-105 object-cover" />
           </div>

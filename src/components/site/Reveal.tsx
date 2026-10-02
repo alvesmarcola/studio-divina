@@ -13,29 +13,45 @@ export function Reveal({
   as?: ElementType;
 }) {
   const ref = useRef<HTMLElement>(null);
+
   useEffect(() => {
     const el = ref.current;
+
     if (!el) return;
+
     const io = new IntersectionObserver(
       ([e]) => {
         if (e?.isIntersecting) {
-          el.classList.add("is-visible");
+          el.dataset.visible = "true";
           io.disconnect();
         }
       },
       { threshold: 0.05 },
     );
+
     io.observe(el);
+
     return () => io.disconnect();
   }, []);
+
   return (
-    <Tag ref={ref} className={cn("reveal", className)} style={{ transitionDelay: `${delay}ms` }}>
+    <Tag
+      ref={ref}
+      className={cn("reveal", className)}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
       {children}
     </Tag>
   );
 }
 
-export function SectionLabel({ n, children }: { n: string; children: ReactNode }) {
+export function SectionLabel({
+  n,
+  children,
+}: {
+  n: string;
+  children: ReactNode;
+}) {
   return (
     <div className="flex items-center gap-4 text-muted-foreground">
       <span className="label-micro">{n}</span>
@@ -44,3 +60,4 @@ export function SectionLabel({ n, children }: { n: string; children: ReactNode }
     </div>
   );
 }
+
